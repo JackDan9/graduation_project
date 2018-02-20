@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "description": "A starter project for AngularJS",
-  "repository": "https://github.com/jackdan9/angular/angular-seed",
+  "repository": "https://github.com/JackDan9/graduation_project",
   "license": "MIT",
   "devDependencies": {
     "bower": "^1.7.7",
