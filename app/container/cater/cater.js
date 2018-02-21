@@ -1,3 +1,6 @@
+/**
+ * Created by JackDan9 on 2018/2/21.
+ */
 'use strict';
 
 angular.module('myApp.cater', ['ngRoute'])
