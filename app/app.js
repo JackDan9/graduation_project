@@ -14,7 +14,6 @@ angular.module('myApp', [
     'myApp.flight',
     'myApp.chinese',
     'myApp.foreign'
-
 ]).config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!');
 
