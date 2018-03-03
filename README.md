@@ -17,5 +17,5 @@ npm run start
 ```
 ------
 
-## If you like it, please give me a star!
-## If you have valuable experience in this area, welcome, grateful!
+## Suggestions
+- If you have more suggestions, please help me! Thanks!
