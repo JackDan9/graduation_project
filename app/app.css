@@ -1,25 +1,24 @@
 /* app css stylesheet */
 
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
+.show-menu {
+  display: inline-block;
+  margin: 0;
+}
+.hidden {
+  display: none;
+}
+.active {
+  display: block;
 }
 
-.menu:before {
-  content: "[";
+.menu-button {
+  width: 100%;
 }
 
-.menu:after {
-  content: "]";
+.md-title-width {
+  display: inline-block;
+  width: 70%;
+  text-align: left;
 }
 
-.menu > li {
-  display: inline;
-}
 
-.menu > li + li:before {
-  content: "|";
-  padding-right: 0.3em;
-}

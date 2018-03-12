@@ -1,13 +1,16 @@
----
-title: graduation_project
-tags: AngularJS, JackDan, Graduation, Project
-author: jackdan9
----
+# graduation_project
 
 ------
 ## Build Setup
 
 ```bash
+
+# To get the latest stable version, use Bower from the command line.
+npm install angular-material --save
+
+# To get the most recent, latest committed-to-master version use:
+npm install http://github.com/angular/bower-material#master --save
+
 # install dependencies
 npm install
 
@@ -15,6 +18,11 @@ npm install
 npm run start
 
 ```
+------
+
+## Note
+- Please note that using AngularJS Material requires the use of `AngularJS 1.3.x` or higher.
+
 ------
 
 ## If you like it, please give me a star!
