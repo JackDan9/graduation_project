@@ -1,55 +1,61 @@
-<div id="register-page" class="row">
-    <div class="col s12 z-depth-6 card-panel">
-        <form class="login-form">
-            <div class="row">
-                <div class="input-field col s12 center">
-                    <img src="../../images/loginIcon.png" alt="" class="responsive-img valign profile-image-login">
-                    <div class="htmleaf-links">
-                        <a class="material-icons dp48 htmleaf-icon icon-htmleaf-home-outline " href="#" title="homeWelcome" target="_blank">home <span class="htmleaf-links-span">/</span></a>
-                        <a class="material-icons dp48 htmleaf-icon icon-htmleaf-arrow-forward-outline" href="#" title="" target="_blank">replay</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row margin">
-                <div class="input-field col s12">
-                    <i class="material-icons dp48 mdi-social-person-outline prefix">perm_identity</i>
-                    <input class="validate" id="username" type="text">
-                    <label for="username">UserName</label>
-                    <!--<label for="email" data-error="wrong" data-success="right" class="center-align">Email</label>-->
-                </div>
-            </div>
-            <div class="row margin">
-                <div class="input-field col s12">
-                    <i class="material-icons dp48 mdi-social-person-outline prefix">email</i>
-                    <input class="validate" id="email" type="email">
-                    <label for="email">Email</label>
-                    <!--<label for="email" data-error="wrong" data-success="right" class="center-align">Email</label>-->
-                </div>
-            </div>
-            <div class="row margin">
-                <div class="input-field col s12">
-                    <i class="material-icons dp48 mdi-action-lock-outline prefix">lock_outline</i>
-                    <input id="password" type="password">
-                    <label for="password">Password</label>
-                </div>
-            </div>
-            <div class="row margin">
-                <div class="input-field col s12">
-                    <i class="material-icons dp48 mdi-action-lock-outline prefix">lock_outline</i>
-                    <input id="password-again" type="password">
-                    <label for="password-again">Re-type password</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <a href="register.html" class="btn waves-effect waves-light col s12">立刻注册</a>
-                </div>
-                <div class="input-field col s12">
-                    <p class="margin center medium-small sign-up">已经有了账号? <a href="#!/login">登录</a></p>
-                </div>
-            </div>
-
-        </form>
-    </div>
+<register-header></register-header>
+<div layout-gt-sm="row" layout-sm="column" class="botvs-login">
+    <md-content class="botvs-md-content" ng-controller="RegisterCtrl">
+        <md-card class="botvs-md-card">
+            <md-card-content class="botvs-md-card-content-register">
+                <form name="userRegisterForm">
+                    <md-input-container class="botvs-login-input-container">
+                        <span style="display:inline-block; width: 100%; margin-bottom: 30px; padding: 0; font-size: 24px; color: #373d41; letter-spacing: 1px; line-height: 36px; text-align: center;">欢迎注册BotVS</span>
+                    </md-input-container>
+                    <md-input-container class="botvs-login-input-container">
+                        <label>邮箱</label>
+                        <input required type="email" name="userEmail" ng-model="user.email" ng-pattern="/^.+@.+\..+$/" />
+                        <div ng-messages="userRegisterForm.userEmail.$error" role="alert">
+                            <div ng-message="required">
+                                请输入电子邮件地址
+                            </div>
+                            <div ng-message="pattern">
+                                请输入正确的电子邮件地址
+                            </div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container class="botvs-login-input-container">
+                        <label>登录密码</label>
+                        <input required type="password" name="userPassword" ng-model="user.password" ng-pattern="/^[a-zA-Z]\w{5,17}$/" />
+                        <div ng-messages="userRegisterForm.userPassword.$error" role="alert">
+                            <div ng-message="required">
+                                请输入登录密码
+                            </div>
+                            <div ng-message="pattern">
+                                请输入正确的密码格式
+                            </div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container class="botvs-login-input-container botvs-login-input-container-submit">
+                        <md-button class="md-primary" ng-click="submit()" style="width: 100%; margin: 0; padding: 0; background-color: rgba(63, 81, 181, 0.6); color: #fff;">
+                            免费注册
+                        </md-button>
+                    </md-input-container>
+                    <md-input-container class="botvs-login-input-container">
+                        <md-checkbox name="tos" ng-model="use.tos" required aria-label="Done?">
+                            <span style="color: #9B9EA0; font-size: 14px;">我已阅读并同意</span><a href="#!/" style="color: #00c1de; font-size: 14px;">《用户协议》</a>
+                        </md-checkbox>
+                        <div ng-messages="userRegisterForm.tos.$error" multiple md-auto-hide="false">
+                            <div ng-message="required">
+                                请您同意用户协议
+                            </div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container class="botvs-login-input-container">
+                        <span style="display: inline-block; font-size: 12px; color: #9B9EA0;letter-spacing: 1px;">
+                            已经拥有账号
+                        </span>
+                        <a href="/login" style="display: inline-block; margin: 0; padding: 0; text-align: left; font-size: 12px; color: #00c1de;">
+                            快速登录 >
+                        </a>
+                    </md-input-container>
+                </form>
+            </md-card-content>
+        </md-card>
+    </md-content>
 </div>

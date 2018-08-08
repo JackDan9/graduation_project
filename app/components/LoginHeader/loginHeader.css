@@ -1,0 +1,19 @@
+.botvs-top-logo-login-row {
+	display: flex;
+    display: -ms-flexbox;
+    height: 48px;
+    position: relative;
+    padding: 0 24px;
+}
+
+a.botvs-user-home {
+    margin: 6px -8px 6px 16px;
+}
+
+a.botvs-top-login-button {
+	background: 0;
+    box-shadow: none;
+    color: #039be5;
+    transition: background-color .2s,color .2s;
+    padding: 8px;
+}

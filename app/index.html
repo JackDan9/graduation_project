@@ -1,190 +1,36 @@
 <!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="/" />
     <title>BotVS</title>
     <link rel="stylesheet" href="./app.css" />
     <link rel="stylesheet" href="./bower_components/angular-material/angular-material.css" />
-    <script type="text/javascript">
-      var showMenu = function() {
-          var cssName = document.getElementById("menu").getAttribute("class");
-          cssName = cssName.replace("hidden", "active");
-          document.getElementById("menu").setAttribute("class", cssName);
-      };
-      var hideMenu = function () {
-          var cssName = document.getElementById("menu").getAttribute("class");
-          cssName = cssName.replace("active", "hidden");
-          document.getElementById("menu").setAttribute("class", cssName);
-      }
-    </script>
   </head>
-  <body ng-app="getLostApp" ng-cloak>
-    <md-content>
-      <!-- The top toolbar -->
-      <md-toolbar>
-        <div class="md-toolbar-tools">
-          <md-button class="md-icon-button show-menu">
-            <md-icon md-svg-icon="./bower_components/material-design-icons/navigation/svg/design/ic_menu_24px.svg"></md-icon>
-          </md-button>
-          <md-button class="home" href="/" style="height: 40px;">
-            <img style="display: inline-block; height: 100%; width: 70px;" alt="BotVS" src="https://www.botvs.com/images/logo.png" title="BotVS" />
-          </md-button>
-          <!--
-          <ul style="list-style: none; float: left; position: relative; margin: 0; padding: 0;">
-            <li style="position: relative; height: 60px; float: left; line-height: 60px; padding: 0 16px; ">
-              <span class="md-title">首页</span>
-            </li>
-            <li style="position: relative; height: 60px; float: left; line-height: 60px; padding: 0 16px;">
-              <span class="md-title">策略广场</span>
-            </li>
-            <li style="position: relative; height: 60px; float: left; line-height: 60px; padding: 0 16px; ">
-              <span class="md-title">实盘围观</span>
-            </li>
-            <li style="position: relative; height: 60px; float: left; line-height: 60px; padding: 0 16px;">
-              <span class="md-title">交流社区</span>
-            </li>
-            <li style="position: relative; height: 60px; float: left; line-height: 60px; padding: 0 16px; ">
-              <span class="md-title">API文档</span>
-            </li>
-            <li style="position: relative; height: 60px; float: left; line-height: 60px; padding: 0 16px;">
-                <span class="md-title">宽客工具</span>
-                <ul style="position: absolute; top: 60px; margin: 0; padding: 0; background-color: rgb(63,81,181); list-style: none; display: none; ">
-                  <li>
-                    <span class="md-title">行情图标</span>
-                  </li>
-                  <li>
-                    <span class="md-title">分析工具</span>
-                  </li>
-                </ul>
-            </li>
-          </ul>
-          -->
-          <md-list style="margin: 0; padding: 0; list-style: none;">
-            <md-list-item style="position: relative; height: 60px; float: left; line-height: 60px; padding: 0 16px;">
-              <span class="md-title">简体中文</span>
-            </md-list-item>
-            <md-list-item style="position: relative; height: 60px; float: left; line-height: 60px; padding: 0 16px;">
-              <span class="md-title">注册</span>
-            </md-list-item>
-            <md-list-item style="position: relative; height: 60px; float: left; line-height: 60px; padding: 0 16px;">
-              <span class="md-title">登录</span>
-            </md-list-item>
-          </md-list>
-        </div>
-      </md-toolbar>
+  <body ng-app="myApp" ng-cloak>
+    <md-content ng-view>
+      <!--botvs-header -->
 
-      <!-- The content area -->
-      <div layout="row">
-        <!-- 20% padding to the left -->
-        <div flex="20" class="hidden" id="menu">
-          <md-list>
-            <md-list-item>
-              <md-button class="menu-button">
-                <md-icon md-svg-icon="./bower_components/material-design-icons/action/svg/design/ic_home_24px.svg"></md-icon>
-                <span class="md-title md-title-width">首页</span>
-                <md-icon md-svg-icon="./bower_components/material-design-icons/navigation/svg/design/ic_chevron_right_24px.svg"></md-icon>              </md-button>
-            </md-list-item>
-            <md-list-item>
-              <md-button class="menu-button">
-                <span class="md-title">策略广场</span>
-              </md-button>
-            </md-list-item>
-            <md-list-item>
-              <md-button class="menu-button">
-                <span class="md-title">实盘围观</span>
-              </md-button>
-              </md-list-item>
-            <md-list-item>
-              <md-button class="menu-button">
-                <span class="md-title">交流社区</span>
-              </md-button>
-              </md-list-item>
-              <md-list-item>
-                <md-button class="menu-button">
-                  <span class="md-title">API文档</span>
-                </md-button>
-              </md-list-item>
-              <md-list-item>
-                <md-button class="menu-button">
-                  <span class="md-title">宽容工具</span>
-                </md-button>
-              </md-list-item>
-          </md-list>
-        </div>
-
-        <!-- The main action happens here -->
-          <md-card flex ng-controller="MainCtrl as ctrl">
-            <md-card-content>
-              <!-- The row for the city select autocomplete list -->
-              <md-content>
-                <md-autocomplete md-select-item="ctrl.selectedItem"
-                  md-search-text="ctrl.searchText"
-                  md-items="item in ctrl.querySearch(ctrl.searchText)"
-                  md-item-text="item.display"
-                  md-min-length="0"
-                  placeholder="Where are you flying from?">
-                  <md-item-template>
-                    <span md-highlight-text="ctrl.searchText" md-highlight-flags="^i">{{item.display}}</span>
-                  </md-item-template>
-                  <md-not-found>
-                    No matches found for "{{ctrl.searchText}}".
-                  </md-not-found>
-                </md-autocomplete>
-                <md-tooltip>
-                  Pick the city you want to start from!
-                </md-tooltip>
-                <p class="md-caption">NYC, CHI and LON work well</p>
-              </md-content>
-              <!-- The row for the budget and dates -->
-              <div layout>
-                <md-input-container flex>
-                  <md-select placeholder="Set your budget" ng-model="info.maxfare">
-                    <div ng-repeat="p in prices">
-                      <md-option value="{{p.value}}">{{p.show}}</md-option>
-                    </div>
-                  </md-select>
-                </md-input-container>
-                <md-input-container flex>
-                  <label>Start date</label>
-                  <input type="date" ng-model="info.departuredate" />
-                </md-input-container>
-                <md-input-container flex>
-                  <label>End date</label>
-                  <input type="date" ng-model="info.returndate" />
-                </md-input-container>
-              </div>
-
-              <!-- The submit button -->
-              <div layout>
-                <md-button class="md-raised md-primary" ng-click="submit()">Search for destinations!</md-button>
-              </div>
-
-              <!--  The results -->
-              <md-content ng-show="fareinfo">
-                <md-list>
-                  <md-subheader class="md-no-sticky">Results</md-subheader>
-                  <md-list-item class="md-3-line" ng-repeat="item in fareinfo | order:'LowersFare'">
-                    <div class="md-list-item-text">
-                      <h3>Destination: {{ item.DestinationLoaction }}</h3>
-                      <h4>Lowest fare: $ {{ item.LowestFare }}</h4>
-                      <p>Lowest non-stop fare: $ {{  item.LowerstNonStopFare }}</p>
-                    </div>
-                    <md-divider></md-divider>
-                  </md-list-item>
-                </md-list>
-              </md-content>
-            </md-card-content>
-          </md-card>
-      </div>
     </md-content>
+    <page-footer></page-footer>
 
     <!-- script -->
     <script src="./bower_components/angular/angular.js"></script>
+    <script src="./bower_components/angular-route/angular-route.js"></script>
+    <script src="./bower_components/angular-messages/angular-messages.js"></script>
     <script src="./bower_components/angular-aria/angular-aria.js"></script>
     <script src="./bower_components/angular-animate/angular-animate.js"></script>
     <script src="./bower_components/angular-material/angular-material.js"></script>
 
-
     <script src="./app.js"></script>
+    <script src="./container/register/register.js"></script>
+    <script src="./container/login/login.js"></script>
+    <script src="./container/home/home.js"></script>
+
   </body>
 </html>

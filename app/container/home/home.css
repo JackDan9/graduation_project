@@ -1,0 +1,403 @@
+.botvs-main-content {
+    position: relative;
+    min-height: calc(100vh - 484px);
+    padding: 0 10px;
+    margin: 96px auto;
+}
+
+.botvs-site {
+    color: #4A5960;
+    font-size: 14px;
+}
+
+.botvs-site>.botvs-hero {
+    display: block;
+    position: relative;
+    min-height: 103px;
+    /*border: 1px solid #000;*/
+    color: #fff;
+    /*margin-top: -40px;*/
+    padding: 20px 64px 30px 96px;
+}
+
+@media (max-width: 1060px) {
+    .botvs-site .botvs-hero {
+        padding: 38px 12px 3%;
+    }
+}
+
+@media handheld and (max-width: 480px), screen and (max-device-width: 480px), screen and (max-device-width: 780px) {
+    .botvs-site .botvs-hero {
+        height: auto;
+        min-height: auto;
+        padding: 64px 16px 8px 16px;
+    }
+}
+
+#botvs-site .botvs-max-width-standard {
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1280px !important;
+}
+
+#botvs-site h1.botvs-headline {
+    margin-bottom: 30px;
+    font: 300 34px/40px Roboto,sans-serif;
+    letter-spacing: -.01em;
+    font-size: 40px;
+    color: #36474f;
+    /*line-height: 1.1em;*/
+    overflow: hidden;
+    padding: 0;
+    text-overflow: ellipsis;
+}
+
+@media only screen and (max-width: 767px) {
+    #botvs-site h1.botvs-headline {
+        font-size: 34px;
+    }
+}
+
+.botvs-site .botvs-hero h1 p {
+    line-height: 112%;
+    margin: 0;
+}
+
+.botvs-site .botvs-hero h1 p.botvs-gray {
+    color: #77909c;
+    font-size: 45px;
+    font-weight: 300;
+}
+
+.botvs-site .botvs-hero h1 p.botvs-blue {
+    color: #0273d4;
+    font-size: 45px;
+    font-weight: 300;
+}
+
+#botvs-site .botvs-hero ul.botvs-list {
+    color: #536e7a;
+    list-style: none;
+    margin: 0 0 24px 0;
+    padding-left: 0;
+}
+
+#botvs-site .botvs-hero ul.botvs-list li {
+    /*display: flex;*/
+    font-size: 16px;
+    margin: 8px 0;
+    padding: 0;
+}
+
+#botvs-site .botvs-hero .md-blue {
+    color: #039be5;
+    margin-right: 12px;
+}
+
+#botvs-site .botvs-site .botvs-link {
+    background: #4285f4 url(https://cloud.google.com/_static/images/cloud/products/logos/svg/gcp-button-icon.svg) 16px 12px no-repeat;
+    color: #fff;
+    margin: 22px 10px;
+    padding-left: 56px;
+    /*padding: 10px 30px 10px 30px;*/
+}
+
+.botvs-site .botvs-chat {
+    background: #fff;
+    border: 1px solid #DFDFDF;
+    color: #2b85e7;
+    margin: 22px 10px;
+    padding-left: 56px;
+    /*padding: 10px 48px 10px 48px;*/
+}
+
+#botvs-site .botvs-button-large {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 48px;
+    padding: 0 48px;
+}
+
+@media only screen and (max-width: 900px) {
+    #botvs-site .botvs-site .botvs-button-cloud {
+        margin: 34px 0 22px;
+    }
+}
+
+@media handheld and (max-width: 480px), screen and (max-device-width: 480px), screen and (max-width: 720px) {
+    #botvs-site .botvs-site .botvs-button {
+        width: 100%;
+        display: block;
+        margin: 16px 0;
+    }
+}
+
+/*
+#botvs-site .botvs-full-bleed-section {
+    margin-left: -10000px;
+    margin-right: -10000px;
+    padding-left: 10000px;
+    padding-right: 10000px;
+}
+*/
+
+.botvs-background-grey {
+    background: #f7f7f7;
+    color: #4A5960;
+}
+
+#botvs-site .botvs-pad-top-3 {
+    padding-top: 24px;
+}
+
+#botvs-site .botvs-pad-top-6 {
+    padding-top: 48px;
+}
+
+#botvs-site .botvs-pad-bottom-4 {
+    padding-bottom: 32px;
+}
+
+#botvs-site .botvs-pad-bottom-5 {
+    padding-bottom: 40px;
+}
+
+#botvs-site .botvs-grid-fluid {
+    margin: 0 auto;
+}
+
+#botvs-site .botvs-grid-fluid::before {
+    clear: both;
+    content: '.';
+    display: block;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+}
+
+.botvs-grid-fluid::before {
+    clear: both;
+    content: '.';
+    display: block;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+}
+
+#botvs-site .botvs-grid-fluid::after {
+    clear: both;
+    content: '.';
+    display: block;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+}
+
+.botvs-grid-fluid::after {
+    clear: both;
+    content: '.';
+    display: block;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+}
+
+#botvs-site .botvs-grid-fluid .botvs-c12 {
+    display: inline;
+    float: left;
+    width: 97.91667%;
+    margin-left: 1.04167%;
+    margin-right: 1.04167%;
+}
+
+#botvs-site .botvs-grid-fluid .botvs-c3 {
+    display: inline;
+    float: left;
+    width: 22%;
+    margin-left: 1.04167%;
+    margin-right: 1.04167%;
+}
+
+@media only screen and (max-width: 900px)  {
+    #botvs-site .botvs-grid-fluid .botvs-c3 {
+        margin: 0;
+        padding-bottom: 56px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    #botvs-site .botvs-grid-fluid .botvs-c3.botvs-last {
+        padding-bottom: 0;
+    }
+}
+
+#botvs-site .botvs-border {
+    background-color: #548fe8;
+    height: 2px;
+    width: 90px;
+    margin-bottom: 26px;
+}
+
+#botvs-site h3 {
+    font: 500 20px/25px Roboto,sans-serif;
+    margin: 0 0 14px 0;
+}
+
+#botvs-site .botvs-p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6em;
+    margin: 16px 0;
+    padding: 0;
+}
+
+@media only screen and (max-width: 900px) {
+    #botvs-site .botvs-p {
+        min-height: inherit;
+    }
+}
+
+#botvs-site .why-botvs-section {
+    border-bottom: 1px solid #ddd;
+    margin: 24px auto;
+    padding-bottom: 24px;
+}
+
+#botvs-site .botvs-grid-fluid .botvs-c4 {
+    display: inline;
+    float: left;
+    width: 31.25%;
+    margin-left: 1.04167%;
+    margin-right: 1.04167%;
+}
+
+#botvs-site .botvs-text-center {
+    text-align: center;
+}
+
+#botvs-site .botvs-text-container h3 {
+    margin: 16px 0 12px;
+}
+
+#botvs-site .why-botvs-section .botvs-image {
+    display: block;
+    height: 130px;
+    margin: 0 auto;
+    width: 188px;
+}
+
+#botvs-site .why-botvs-section .botvs-futureproof {
+    background: url("https://cloud.google.com/_static/images/cloud/home/future.png") no-repeat;
+}
+
+#botvs-site .botvs-text-body {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    margin: 0 0 16px 0;
+}
+
+#botvs-site .why-botvs-section .botvs-analytics {
+    background: url("https://cloud.google.com/_static/images/cloud/home/analytics.png") no-repeat;
+}
+
+#botvs-site .why-botvs-section .botvs-just-code {
+    background: url("https://cloud.google.com/_static/images/cloud/home/just-code.png") no-repeat;
+}
+
+#botvs-site .why-botvs-section .botvs-text-display {
+    color: #455a64;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+@media (max-width: 767px) {
+    #botvs-site .why-botvs-section .botvs-text-display {
+        color: #2b85e7;
+    }
+}
+
+#botvs-site .botvs-products .botvs-compute {
+    background: url(https://cloud.google.com/_static/images/cloud/products/icons/compute.svg) no-repeat 0 0/31px;
+}
+
+#botvs-site .botvs-products .botvs-storage {
+    background: url(https://cloud.google.com/_static/images/cloud/products/icons/storage.svg) no-repeat 0 0/31px;
+}
+
+#botvs-site .botvs-products .botvs-networking {
+    background: url(https://cloud.google.com/_static/images/cloud/products/icons/networking.svg) no-repeat 0 0/31px;
+}
+
+#botvs-site .botvs-products .botvs-bigdata {
+    background: url(https://cloud.google.com/_static/images/cloud/products/icons/bigdata.svg) no-repeat 0 0/31px;
+}
+
+#botvs-site .botvs-products .botvs-bigdata {
+    background: url(https://cloud.google.com/_static/images/cloud/products/icons/bigdata.svg) no-repeat 0 0/31px;
+}
+
+#botvs-site .botvs-products .botvs-iot {
+    background: url(https://cloud.google.com/_static/images/cloud/products/icons/cloud-iot.svg) no-repeat 0 0/31px;
+}
+
+#botvs-site .botvs-products .botvs-machinelearning {
+    background: url(https://cloud.google.com/_static/images/cloud/products/icons/machine-learning.svg) no-repeat 0 0/31px;
+}
+
+#botvs-site .botvs-products li {
+    border-bottom: 1px solid #eceff1;
+    margin: 0;
+    padding: 0;
+}
+
+#botvs-site .botvs-products li a {
+    color: #8fa4ae;
+    display: block;
+    font-size: 14px;
+    line-height: 32px;
+    margin: 0;
+    text-align: left;
+    text-decoration: none;
+    transition: color .3s,transform .3s;
+    transition: none;
+}
+
+#botvs-site .botvs-products li a.botvs-last {
+    background: #fafafa;
+    line-height: 20px;
+}
+
+#botvs-site .botvs-products li a.botvs-text-center {
+    text-align: center;
+}
+
+#botvs-site .botvs-text-wrapper {
+    margin-bottom: 5px;
+    padding: 2px 0 0 47px;
+}
+
+#botvs-site .botvs-grid-fluid .botvs-c4 ul.botvs-list {
+    color: #536e7a;
+    list-style: none;
+}
+
+
+
+
+
+
+

@@ -1,31 +1,149 @@
-// 'use strict';
+'use strict';
 
-// Declare app level module which depends on views, and components
-/*
-angular.module('myApp', [
-    'ngRoute',
-    'ngResource',
-    'ngMaterial',
-    'ngMessages',
-    'myApp.traffic',
-    'myApp.cater',
-    'myApp.collection',
-    'myApp.welcomeHome',
-    'myApp.login',
-    'myApp.register',
-    'myApp.version',
-    'myApp.flight',
-    'myApp.chinese',
-    'myApp.foreign'
-]).config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-  $locationProvider.hashPrefix('!');
+let app = angular.module('myApp', [
+    'ngMaterial', 
+    'ngRoute', 
+    'ngMessages' , 
+    'myApp.home', 
+    'myApp.register', 
+    'myApp.login'
+]);
 
-  $routeProvider.otherwise({redirectTo: '/login'});
+app.factory
+
+app.config(['$locationProvider', '$routeProvider', '$sceProvider',
+    function ($locationProvider, $routeProvider, $sceProvider) {
+    $locationProvider.html5Mode(true);
 }]);
-*/
 
-angular.module('getLostApp', ['ngMaterial']).
-controller('MainCtrl', function($rootScope, $scope, $mdToast, $animate, $http, $timeout, $q, $log) {
+app.component("pageHeader", {
+    templateUrl:"./components/Header/pageHeader.html",
+    controller:function ($scope) {
+
+    }
+});
+
+app.component("registerHeader", {
+    templateUrl:"./components/RegisterHeader/registerHeader.html",
+    controller:function ($scope) {
+
+    }
+});
+
+app.component("loginHeader", {
+    templateUrl:"./components/LoginHeader/loginHeader.html",
+    controller:function ($scope) {
+
+    }
+});
+
+app.component("pageLeftNav", {
+    templateUrl:"./components/LeftNav/pageLeftNav.html",
+    controller:function ($scope) {
+
+    }
+});
+
+app.component("pageFooter", {
+    templateUrl:"./components/Footer/pageFooter.html",
+    controller: function ($scope) {
+    }
+});
+
+app.controller('NavController',
+    function ($rootScope, $scope) {
+    $scope.items = [
+        {
+            name: "首页",
+        },
+        {
+            name: "策略广场",
+        },
+        {
+            name: "实盘围观",
+        },
+        {
+            name: "交流社区",
+        },
+        {
+            name: "API文档",
+        },
+        {
+            name: "行情图表",
+        },
+        {
+            name: "分析工具"
+        }
+    ]
+});
+
+app.controller('MdListNavController',
+    function($rootScope, $scope) {
+    $scope.items = [
+        {
+            name: "首页",
+        },
+        {
+            name: "策略广场",
+        },
+        {
+            name: "实盘围观",
+        },
+        {
+            name: "交流社区",
+        },
+        {
+            name: "API文档",
+        },
+        {
+            name: "行情图表",
+        },
+        {
+            name: "分析工具"
+        },
+        {
+            name: "简体中文"
+        },
+        {
+            name: "English"
+        },
+        {
+            name: "登录"
+        },
+        {
+            name: "免费注册"
+        }
+    ]
+})
+
+app.controller('LoginCtrl',
+    function ($rootScope, $scope, $http) {
+    $scope.user = {
+        email: '',
+        password: ''
+    };
+    $scope.submitLogin = function () {
+        $http.get('./json/login/login.json').then(function (data) {
+            $scope.result = data;
+            if ($scope.result.status && ($scope.result.status == 200)) {
+                $scope.userInfo = $scope.result.data.userInfo;
+                $scope.email = $scope.userInfo.email;
+                $scope.password = $scope.userInfo.password;
+            }
+        })
+    }
+})
+
+app.controller('RegisterCtrl',
+    function ($rootScope, $scope, $http) {
+    $scope.user = {
+        email: '',
+        password: ''
+    };
+})
+
+app.controller('MainCtrl',
+    function($rootScope, $scope, $mdToast, $animate, $http, $timeout, $q, $log) {
     'use strict';
     // Initialize the scope variables
     $scope.info = {
@@ -192,5 +310,4 @@ controller('MainCtrl', function($rootScope, $scope, $mdToast, $animate, $http, $
             );
         };
     })();
-
 });

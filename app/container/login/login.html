@@ -1,52 +1,52 @@
-<div id="login-page" class="row">
-    <div class="col s12 z-depth-6 card-panel">
-        <form class="login-form">
-            <div class="row">
-                <div class="input-field col s12 center">
-                    <img src="../../images/loginIcon.png" alt="" class="responsive-img valign profile-image-login">
-                    <div class="htmleaf-links">
-                        <a class="material-icons dp48 htmleaf-icon icon-htmleaf-home-outline " href="#" title="homeWelcome" target="_blank">home <span class="htmleaf-links-span">/</span></a>
-                        <a class="material-icons dp48 htmleaf-icon icon-htmleaf-arrow-forward-outline" href="#" title="" target="_blank">replay</a>
-                    </div>
-                </div>
-            </div>
+<login-header></login-header>
+<div layout-gt-sm="row" layout-sm="column" class="botvs-login">
+    <md-content class="botvs-md-content" ng-controller="LoginCtrl">
+        <md-card class="botvs-md-card">
+            <md-card-content class="botvs-md-card-content">
+                <form name="userLoginForm">
+                    <md-input-container class="botvs-login-input-container">
+                        <span style="display:inline-block; width: 100%; margin-bottom: 30px; padding: 0; font-size: 24px; color: #373d41; letter-spacing: 1px; line-height: 36px; text-align: center;">欢迎登录BotVS</span>
+                    </md-input-container>
+                    <md-input-container class="botvs-login-input-container">
+                        <label>用户名/邮箱</label>
+                        <input required type="email" step="any" name="userEmail" ng-model="user.email" ng-pattern="email" />
+                        <div ng-messages="userLoginForm.userEmail.$error" multiple md-auto-hide="true">
+                            <div ng-message="required">
+                                请输入您的邮箱
+                            </div>
+                            <div ng-message="pattern">
+                                请输入您正确的邮箱
+                            </div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container class="botvs-login-input-container md-block">
+                        <label>登录密码</label>
+                        <input required type="password" step="any" name="userPassword" ng-model="user.password"  ng-pattern="password" />
+                        <div ng-messages="userLoginForm.userPassword.$error" multiple md-auto-hide="true">
+                            <div ng-message="required">
+                                请输入登录密码
+                            </div>
 
-            <div class="row margin">
-                <div class="input-field col s12">
-                    <i class="material-icons dp48 mdi-social-person-outline prefix">perm_identity</i>
-                    <input class="validate" id="email" type="email">
-                    <label for="email">Email</label>
-                    <!--<label for="email" data-error="wrong" data-success="right" class="center-align">Email</label>-->
-                </div>
-            </div>
-            <div class="row margin">
-                <div class="input-field col s12">
-                    <i class="material-icons dp48 mdi-action-lock-outline prefix">lock_outline</i>
-                    <input id="password" type="password">
-                    <label for="password">Password</label>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="input-field col s12 m12 l12  login-text">
-                    <input type="checkbox" id="remember-me" />
-                    <label for="remember-me">记住我</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <!--<a href="index.html" class="btn waves-effect waves-light col s12">登　录</a>-->
-                    <a href="#!/welcomeHome" class="btn waves-effect waves-light col s12">登　录</a>-
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s6 m6 l6">
-                    <p class="margin medium-small"><a href="#!/register">现在注册!</a></p>
-                </div>
-                <!--<div class="input-field col s6 m6 l6">-->
-                    <!--<p class="margin right-align medium-small"><a href="forgot-password.html">忘记密码?</a></p>-->
-                <!--</div>-->
-            </div>
-        </form>
-    </div>
+                            <div ng-message="pattern">
+                                请输入正确的登录密码
+                            </div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container class="botvs-login-input-container botvs-login-input-container-submit">
+                        <md-button class="md-primary" ng-click="submitLogin()" style="width: 100%; margin: 0; padding: 0; background-color: rgba(63, 81, 181, 0.6); color: #fff;">
+                            确定登录
+                        </md-button>
+                    </md-input-container>
+                    <md-input-container class="botvs-login-input-container">
+                        <md-button style="display: inline-block; font-size: 12px; color: #9B9EA0;">
+                            忘记密码
+                        </md-button>
+                        <md-button href="/register" style="display: inline-block; font-size: 12px; color: #9B9EA0;">
+                            免费注册
+                        </md-button>
+                    </md-input-container>
+                </form>
+            </md-card-content>
+        </md-card>
+    </md-content>
 </div>
